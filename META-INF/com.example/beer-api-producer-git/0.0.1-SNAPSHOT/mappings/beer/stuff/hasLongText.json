@@ -1,0 +1,21 @@
+{
+  "id" : "2a2f3247-131c-4984-a8f3-58fe157c6c97",
+  "request" : {
+    "url" : "/stuff",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['comment'] == 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.\nLorem Ipsum has been the industry\\'s standard dummy text ever since the 1500s...\n')]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"status\":\"success\",\"message\":\"It worked\",\"comment\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry.\\nLorem Ipsum has been the industry's standard dummy text ever since the 1500s...\\n\"}",
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "2a2f3247-131c-4984-a8f3-58fe157c6c97"
+}
